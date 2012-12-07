@@ -104,3 +104,46 @@
   </p>
 <% end %>
 
+<%= form_tag admin_destroy_data_path, :method => :delete do %>
+  <h1>Clean Orders</h1>
+  <br />
+  <p class="resources-list">
+    <%= label_tag 'resources[order]', t(:orders) %>
+    <%= check_box_tag 'resources[order]', '1', true %>
+    <br />
+    <%= label_tag 'resources[line_item]', t(:line_items) %>
+    <%= check_box_tag 'resources[line_item]', '1', true %>
+    <br />
+    <%= label_tag 'resources[address]', t(:addresses) %>
+    <%= check_box_tag 'resources[address]', '1', true %>
+    <br />
+    <%= label_tag 'resources[inventory_unit]', t(:inventory_units) %>
+    <%= check_box_tag 'resources[inventory_unit]', '1', true %>
+    <br />
+    <%= label_tag 'resources[payment]', t(:payments) %>
+    <%= check_box_tag 'resources[payment]', '1', true %>
+    <br />
+    <%= label_tag 'resources[adjustment]', t(:adjustments) %>
+    <%= check_box_tag 'resources[adjustment]', '1', true %>
+    <br />
+    <%= label_tag 'resources[shipment]', t(:shipments) %>
+    <%= check_box_tag 'resources[shipment]', '1', true %>
+    <br />
+    <%= label_tag 'resources[state_change]', t(:state_changes) %>
+    <%= check_box_tag 'resources[state_change]', '1', true %>
+    <br />
+    <%= label_tag 'resources[tokenized_permission]', t(:tokenized_permissions) %>
+    <%= check_box_tag 'resources[tokenized_permission]', '1', true %>
+    <br />
+    <%= label_tag 'resources[log_entry]', t(:log_entries) %>
+    <%= check_box_tag 'resources[log_entry]', '1', true %>
+    <br />
+    <%= label_tag 'resources[credit_card]', t(:credit_cards) %>
+    <%= check_box_tag 'resources[credit_card]', '1', true %>
+    <br />
+  </p>
+  <p class="form-buttons" data-hook="buttons">
+    <%= submit_tag t(:destroy_data), :confirm => "#{t(:confirm_delete_data)}" %>
+    <%= t(:or) %> <%= link_to t(:cancel), edit_admin_general_settings_path %>
+  </p>
+<% end %>
